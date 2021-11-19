@@ -13,7 +13,7 @@ class FilialsList extends StatelessWidget {
         builder: (context, state) {
           if (state is FilialEmptyState){
             return Center(
-              child: Text('Нет данных, нажми Обновить'),
+              child: Text('Нет данных, попробуйте изменить параметры поиска'),
             );
           }
           if (state is FilialLoadingState) {

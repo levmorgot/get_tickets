@@ -20,8 +20,6 @@ class FilialBloc extends Bloc<FilialEvent, FilialState> {
     });
     on<FilialSearchEvent>((event, emit) async {
       emit(FilialLoadingState());
-      print("event.searchString");
-      print(event.searchString);
       try {
         final List<Filial> _loadedFilialList =
             await filialsRepository.searchFilials(event.searchString);
