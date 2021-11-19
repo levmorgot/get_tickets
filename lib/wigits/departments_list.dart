@@ -37,14 +37,6 @@ class DepartmentsList extends StatelessWidget {
                         '${state.loadedDepartment[index].name}',
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
-                      Column(
-                        children: <Widget>[
-                          Text(
-                            '${state.loadedDepartment[index].groupName}',
-                            style: TextStyle(fontStyle: FontStyle.italic),
-                          ),
-                        ],
-                      ),
                     ],
                   ),
                 ),

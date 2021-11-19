@@ -7,8 +7,8 @@ class DepartmentProvider {
   List<Department> _allDepartments = [];
 
   Future<List<Department>> getDepartment(int id, int cashId) async {
-    final response =
-        await http.get(Uri.parse('https://registratura.volganet.ru/api/reservation/departments?f=${id}&s=${cashId}'));
+    final response = await http.get(Uri.parse(
+        'https://registratura.volganet.ru/api/reservation/departments?f=${id}&s=${cashId}'));
     if (response.statusCode == 200) {
       final List<dynamic> filialJson = json.decode(response.body)['data'];
       for (final json in filialJson) {
@@ -28,12 +28,7 @@ class DepartmentProvider {
     print(searchString);
     var test = _allDepartments
         .where((department) =>
-            department.name
-                .toUpperCase()
-                .contains(searchString.toUpperCase()) ||
-            department.groupName
-                .toUpperCase()
-                .contains(searchString.toUpperCase()))
+            department.name.toUpperCase().contains(searchString.toUpperCase()))
         .toList();
     print(test);
     return test;
