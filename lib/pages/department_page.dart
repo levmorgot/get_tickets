@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get_tickets/block/filial/filial_bloc.dart';
+import 'package:get_tickets/block/department/department_bloc.dart';
 import 'package:get_tickets/models/filial.dart';
-import 'package:get_tickets/services/filial/filial_repository.dart';
-import 'package:get_tickets/wigits/filials_list.dart';
-import 'package:get_tickets/wigits/search_panel.dart';
+import 'package:get_tickets/services/department/department_repository.dart';
+import 'package:get_tickets/wigits/departments_list.dart';
+import 'package:get_tickets/wigits/search_department_panel.dart';
 
 class DepartmentPage extends StatelessWidget {
-  final FilialsRepository filialsRepository = FilialsRepository();
+  final DepartmentsRepository departmentsRepository = DepartmentsRepository();
 
   Filial filial;
 
@@ -16,8 +16,8 @@ class DepartmentPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<FilialBloc>(
-      create: (context) => FilialBloc(filialsRepository),
+    return BlocProvider<DepartmentBloc>(
+      create: (context) => DepartmentBloc(departmentsRepository),
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
@@ -27,9 +27,9 @@ class DepartmentPage extends StatelessWidget {
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            SearchPanel(),
+            SearchDepartmentPanel(filial),
             Expanded(
-              child: FilialsList(),
+              child: DepartmentsList(),
             ),
           ],
         ),
