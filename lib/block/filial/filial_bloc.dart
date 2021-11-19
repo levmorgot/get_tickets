@@ -1,8 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get_tickets/block/filial_event.dart';
-import 'package:get_tickets/block/filial_state.dart';
+import 'package:get_tickets/block/filial/filial_event.dart';
+import 'package:get_tickets/block/filial/filial_state.dart';
 import 'package:get_tickets/models/filial.dart';
-import 'package:get_tickets/services/filial_repository.dart';
+import 'package:get_tickets/services/filial/filial_repository.dart';
 
 class FilialBloc extends Bloc<FilialEvent, FilialState> {
   final FilialsRepository filialsRepository;

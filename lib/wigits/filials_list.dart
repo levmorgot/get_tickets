@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get_tickets/block/filial_bloc.dart';
-import 'package:get_tickets/block/filial_state.dart';
+import 'package:get_tickets/block/filial/filial_bloc.dart';
+import 'package:get_tickets/block/filial/filial_state.dart';
 
 class FilialsList extends StatelessWidget {
   const FilialsList({Key? key}) : super(key: key);

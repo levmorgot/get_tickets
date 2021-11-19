@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get_tickets/block/filial_bloc.dart';
+import 'package:get_tickets/block/filial/filial_bloc.dart';
 import 'package:get_tickets/models/filial.dart';
-import 'package:get_tickets/services/filial_repository.dart';
+import 'package:get_tickets/services/filial/filial_repository.dart';
 import 'package:get_tickets/wigits/filials_list.dart';
 import 'package:get_tickets/wigits/search_panel.dart';
 

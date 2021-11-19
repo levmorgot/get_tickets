@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get_tickets/block/filial_bloc.dart';
-import 'package:get_tickets/block/filial_event.dart';
+import 'package:get_tickets/block/filial/filial_bloc.dart';
+import 'package:get_tickets/block/filial/filial_event.dart';
 
 class SearchPanel extends StatelessWidget {
   final ButtonStyle raisedButtonStyle = ElevatedButton.styleFrom(
