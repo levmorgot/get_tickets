@@ -14,6 +14,8 @@ class SearchPanel extends StatelessWidget {
     ),
   );
 
+  TextEditingController textFieldController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     final FilialBloc filialBloc = BlocProvider.of<FilialBloc>(context);
@@ -23,15 +25,15 @@ class SearchPanel extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          // Expanded(
-          //   child: TextField(
-          //     obscureText: false,
-          //   ),
-          // ),
+          Expanded(
+            child: TextField(
+              controller: textFieldController,
+            ),
+          ),
           TextButton(
-            child: Text('Обновить'),
+            child: Text('Найти'),
             onPressed: () {
-              filialBloc.add(FilialLoadEvent());
+              filialBloc.add(FilialSearchEvent(textFieldController.text));
             },
             style: raisedButtonStyle,
           )

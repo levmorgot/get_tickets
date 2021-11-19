@@ -23,4 +23,15 @@ class FilialProvider {
       throw Exception('Error fetching filials');
     }
   }
+
+  List<Filial> searchFilial(String searchString) {
+    print(searchString);
+    var test = _allFilials
+        .where((filial) =>
+            filial.name.toUpperCase().contains(searchString.toUpperCase()) ||
+            filial.address.toUpperCase().contains(searchString.toUpperCase()))
+        .toList();
+    print(test);
+    return test;
+  }
 }
