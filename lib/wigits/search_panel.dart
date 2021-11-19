@@ -17,6 +17,7 @@ class SearchPanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final FilialBloc filialBloc = BlocProvider.of<FilialBloc>(context);
+    filialBloc.add(FilialLoadEvent());
     return Container(
       padding: EdgeInsets.all(20),
       child: Row(
