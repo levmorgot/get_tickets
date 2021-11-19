@@ -23,7 +23,11 @@ class FilialBloc extends Bloc<FilialEvent, FilialState> {
       try {
         final List<Filial> _loadedFilialList =
             await filialsRepository.searchFilials(event.searchString);
-        emit(FilialLoadedState(_loadedFilialList));
+        if (_loadedFilialList.length > 0) {
+          emit(FilialLoadedState(_loadedFilialList));
+        } else {
+          emit(FilialEmptyState());
+        }
       } catch (_) {
         emit(FilialErrorState());
       }

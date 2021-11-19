@@ -12,8 +12,13 @@ class DepartmentBloc extends Bloc<DepartmentEvent, DepartmentState> {
       emit(DepartmentLoadingState());
       try {
         final List<Department> _loadedDepartmentList =
-            await departmentsRepository.getAllDepartments(event.filial.id, event.filial.cashId);
-        emit(DepartmentLoadedState(_loadedDepartmentList));
+            await departmentsRepository.getAllDepartments(
+                event.filial.id, event.filial.cashId);
+        if (_loadedDepartmentList.length > 0) {
+          emit(DepartmentLoadedState(_loadedDepartmentList));
+        } else {
+          emit(DepartmentEmptyState());
+        }
       } catch (_) {
         emit(DepartmentErrorState());
       }
