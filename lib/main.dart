@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:get_tickets/pages/department_page.dart';
 import 'package:get_tickets/pages/filials_page.dart';
 
 
@@ -26,6 +27,15 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(),
+      onGenerateRoute: (settings) {
+        switch (settings.name) {
+          case '/filials':
+            return MaterialPageRoute(builder: (context) => MyHomePage());
+          case '/departments':
+            dynamic filial = settings.arguments!;
+            return MaterialPageRoute(builder: (context) => DepartmentPage(filial));
+        }
+      },
     );
   }
 }

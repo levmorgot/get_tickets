@@ -27,6 +27,9 @@ class FilialsList extends StatelessWidget {
               itemBuilder: (context, index) => Container(
                 color: index % 2 == 1 ? Colors.white : Colors.lightBlueAccent,
                 child: ListTile(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/departments', arguments: state.loadedFilial[index]);
+                  },
                   title: Column(
                     children: <Widget>[
                       Text(
