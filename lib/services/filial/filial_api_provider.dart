@@ -11,6 +11,7 @@ class FilialProvider {
         await http.get(Uri.parse('https://registratura.volganet.ru/filial'));
     if (response.statusCode == 200) {
       final List<dynamic> filialJson = json.decode(response.body)['data'];
+      _allFilials = [];
       for (final json in filialJson) {
         try {
           _allFilials.add(Filial.fromJson(json));

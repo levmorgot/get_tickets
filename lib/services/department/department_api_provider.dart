@@ -11,6 +11,7 @@ class DepartmentProvider {
         'https://registratura.volganet.ru/api/reservation/departments?f=${id}&s=${cashId}'));
     if (response.statusCode == 200) {
       final List<dynamic> filialJson = json.decode(response.body)['data'];
+      _allDepartments = [];
       for (final json in filialJson) {
         try {
           _allDepartments.add(Department.fromJson(json));
