@@ -1,4 +1,6 @@
-abstract class FilialEvent {}
+import 'package:get_tickets/block/core/core_event.dart';
+
+abstract class FilialEvent extends CoreEvent {}
 
 class FilialLoadEvent extends FilialEvent {}
 

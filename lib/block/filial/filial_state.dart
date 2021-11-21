@@ -1,4 +1,6 @@
-abstract class FilialState {}
+import 'package:get_tickets/block/core/core_state.dart';
+
+abstract class FilialState extends CoreState {}
 
 class FilialEmptyState extends FilialState {}
 
