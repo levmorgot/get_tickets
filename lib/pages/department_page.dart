@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_tickets/block/department/department_bloc.dart';
 import 'package:get_tickets/models/filial.dart';
 import 'package:get_tickets/services/department/department_repository.dart';
-import 'package:get_tickets/wigits/departments_list.dart';
-import 'package:get_tickets/wigits/search_department_panel.dart';
+import 'package:get_tickets/widgets/departments_list.dart';
+import 'package:get_tickets/widgets/search_department_panel.dart';
 
 class DepartmentPage extends StatelessWidget {
   final DepartmentsRepository departmentsRepository = DepartmentsRepository();

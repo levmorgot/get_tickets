@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_tickets/block/department/department_bloc.dart';
 import 'package:get_tickets/block/department/department_state.dart';
+import 'package:get_tickets/widgets/department_item.dart';
 
 class DepartmentsList extends StatelessWidget {
   const DepartmentsList({Key? key}) : super(key: key);
@@ -25,19 +25,7 @@ class DepartmentsList extends StatelessWidget {
       if (state is DepartmentLoadedState) {
         return ListView.builder(
           itemCount: state.loadedDepartment.length,
-          itemBuilder: (context, index) => Container(
-            color: index % 2 == 1 ? Colors.white : Colors.lightBlueAccent,
-            child: ListTile(
-              title: Column(
-                children: <Widget>[
-                  Text(
-                    '${state.loadedDepartment[index].name}',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                ],
-              ),
-            ),
-          ),
+          itemBuilder: (context, index) => DepartmentItem(state, index),
         );
       }
       if (state is DepartmentErrorState) {
