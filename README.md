@@ -1,6 +1,6 @@
 # get_tickets
 
-A new Flutter project.
+Приложение для поиска и отслеживания талонов к врачам больниц Волгоградской области
 
 ## Getting Started
 
